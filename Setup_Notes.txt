@@ -1,0 +1,20 @@
+sudo apt install nodejs
+sudo apt install npm
+sudo apt install vim
+sudo apt install git
+sudo apt install postgresql
+
+Success. You can now start the database server using:
+/usr/lib/postgresql/10/bin/pg_ctl -D /var/lib/postgresql/10/main -l logfile start
+
+Ver Cluster Port Status Owner    Data directory              Log file
+10  main    5432 down   postgres /var/lib/postgresql/10/main /var/log/postgresql/postgresql-10-main.log
+
+npm init
+npm install express  
+npm install pg   // postgres node interface
+npm install promise
+npm install q // utility for turning functions into async promise returning functions
+npm install bluebird // makes big packages into async promise functions like for a db
+npm install nodemon   // development auto reload, run with nodemon
+

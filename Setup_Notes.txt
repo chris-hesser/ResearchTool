@@ -17,4 +17,5 @@ npm install promise
 npm install q // utility for turning functions into async promise returning functions
 npm install bluebird // makes big packages into async promise functions like for a db
 npm install nodemon   // development auto reload, run with nodemon
+npm install axios  // posting and getting alternative to native 'http' package
 

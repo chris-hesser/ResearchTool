@@ -26,7 +26,7 @@ const getArticleData = async (query, pageNumber) => {
 
 app.get('/', (request, response) => {
 
-  let pageNumber = 1;//Math.floor(Math.random() * Math.floor(100));
+  let pageNumber = Math.floor(Math.random() * Math.floor(100));
   let data;
 
   (async () => {

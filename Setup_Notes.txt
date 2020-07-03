@@ -1,7 +1,12 @@
 sudo apt install nodejs
 sudo apt install npm
+sudo npm install npm -g    // use npm to update itself to latest version
 sudo apt install vim
 sudo apt install git
+
+//
+// Backend
+//
 sudo apt install postgresql
 
 Success. You can now start the database server using:
@@ -18,4 +23,11 @@ npm install q --save  // utility for turning functions into async promise return
 npm install bluebird --save // makes big packages into async promise functions like for a db
 npm install nodemon --save // development auto reload, run with nodemon
 npm install axios --save // posting and getting alternative to native 'http' package
+
+//
+// frontend
+//
+
+sudo npm i -g npx    // use npx globally
+npx create-react-app frontend   // react basic project, babel, webpack
 

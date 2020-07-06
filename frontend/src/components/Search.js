@@ -14,61 +14,73 @@ class Search extends React.Component {
 
     this.state = {
       searchWords: '',
-      negativeSearchWords: '',
+      excludedWords: '',
       currentArticleData: null,
     }
   }
 
   componentDidMount() {
-    // fetch data from backend on first load
+    // todo, don't fetch right away, every refresh it fetches again
+    // probably need to persist history to fix this.
     this.fetchArticleData();
-    console.log("after call")
   }
 
-  // make call to server using current search data,
-  // expect one article data object to be sent in response
-
   fetchArticleData = () => {
-    // clear article to show loading icon
+    // show loading icon
     this.setState({ currentArticleData: null });
 
     // fecth new article
-    this.setState({
-      currentArticleData:
-        (async () => {
-          try {
-            let article = await axios.get("http://localhost:9000/articleRequest");
-            return article;
-          } 
-          catch (error) { 
-            console.log(error);
-            return {title: "bummer"};
-          }
-        })()
-    });
-    console.log("fetch data")
-    console.log(this.currentArticleData);
+    (async () => {
+      try {
+        let article = await axios.get("http://localhost:9000/articleRequest?q=" + this.state.searchWords);
+        this.setState({ currentArticleData: article.data });
+        console.log("saved data", this.state.currentArticleData)
+      }
+      catch (error) {
+        console.log(error);
+        this.setState({ currentArticleData: { title: "Search failed, try again... or go read a book" } });
+      }
+    })()
   }
 
 
   isLoading = () => {
-    return this.currentArticleData == null;
+    return this.state.currentArticleData == null;
   }
 
   clearFields = () => {
     this.setState({
       searchWords: '',
-      negativeSearchWords: '',
+      excludedWords: '',
     });
   }
 
-  /*
-  handleClickedWords = (clickedWord) => {
-    this.setState({
-      searchWords: searchWords + clickedWord
-    })
+  addSearchWord = (clickedWord) => {
+    this.setState((state) => {
+      return { searchWords: this.cleanWord(clickedWord) + ' ' + state.searchWords  };
+    });
   }
-  */
+
+  addExcludedWord = (clickedWord) => {
+    this.setState((state) => {
+      return { excludedWords: this.cleanWord(clickedWord) + ' ' + state.excludedWords };
+    });
+  }
+
+  handleSearchChange = (event) => {
+    this.setState({ searchWords: this.cleanWord(event.target.value) });
+  }
+
+  handleExcludedChange = (event) => {
+    this.setState({ excludedWords: this.cleanWord(event.target.value) });
+  }
+
+  // stateless function  
+  cleanWord(word) {
+    // exclude dash
+    let regex = /[!"#$%&'()*+,./:;<=>?@[\]^_`{|}~\\]/g;
+    return word.replace(regex, '');
+  }
 
   render() {
     return (
@@ -79,9 +91,15 @@ class Search extends React.Component {
           this.isLoading() ?
             <Loading />
             :
-            <ClickableArticle articleData={this.state.currentArticleData} />
+            <ClickableArticle
+              addSearchWord={this.addSearchWord}
+              addExcludedWord={this.addExcludedWord}
+              articleData={this.state.currentArticleData} />
         }
-        <button disabled={this.isLoading()} onClick={this.clearFields}>Reset</button>
+        <input type="text" value={this.state.searchWords} onChange={this.handleSearchChange} />
+        <input type="text" value={this.state.excludedWords} onChange={this.handleExcludedChange} />
+        <button disabled={this.isLoading()} onClick={() => {this.clearFields(); this.fetchArticleData();}}>Reset</button>
+    
         <button disabled={this.isLoading()} onClick={this.fetchArticleData}>Next</button>
       </>
     );

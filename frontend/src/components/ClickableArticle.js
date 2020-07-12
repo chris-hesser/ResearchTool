@@ -1,15 +1,16 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-export default function ClickableArticle(props) {
+function ClickableArticle(props) {
 
-  let title = props.articleData.title;
+  let title = props.article.title;
   let wordsArray = title.split(" ");
 
 
   // todo, add key for color change
   const wordItems = wordsArray.map(
     (word) =>
-      <span onClick={() => props.addSearchWord(word)}>{word + " "}</span>
+      <span className="clickableWord" onClick={() => props.addSearchWord(word)}>{word + " "}</span>
   );
 
   return (
@@ -18,3 +19,12 @@ export default function ClickableArticle(props) {
     </h1>
   );
 }
+
+
+const mapStateToProps = state => {
+  return {
+    article: state.article,
+  }
+}
+
+export default connect(mapStateToProps)(ClickableArticle);

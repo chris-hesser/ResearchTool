@@ -1,19 +1,31 @@
 import React from 'react';
 import './css/App.css';
+
+/*
 import {
   BrowserRouter as Router,
   Switch,
   Route,
 } from 'react-router-dom';
+*/
 
 import Home from "./components/Home";
-import Search from "./components/Search";
+
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import Reducer from './reducers/index.js';
+
+const store = createStore(Reducer);
 
 function App() {
 
-  // order matters for the router, path searched from top to bottom
-
   return (
+    <Provider store={store}>
+      <Home />
+    </Provider>
+
+    /* multi page solution
+    // order matters for the router, path searched from top to bottom
     <Router>
       <Switch>
         <Route path="/search">
@@ -22,16 +34,15 @@ function App() {
         <Route path="/">
           <Home />
         </Route>
-        {/*
         <Route path="/history">
           <History />
         </Route>
         <Route>
           <Home />
         </Route>
-        */}
       </Switch>
     </Router>
+    */
   );
 }
 

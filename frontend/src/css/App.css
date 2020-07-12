@@ -1,31 +1,108 @@
-.App {
+html {
+  scroll-behavior: smooth;
+}
+
+.app {
+  /*
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   text-align: center;
+  background-image: url(../images/flag_hills.png);*/
   background-color: #ececec;
-  background-image: url(../images/flag_hills.png);
+  background-color: #F7F7F7;
+  font-family: 'Open Sans', sans-serif; 
 }
 
-a {
-  color: #61dafb;
+.title {
+  font-size: calc(50px + 2vmin);
+  font-weight: 100;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+.subtitle {
+  margin-top: 0px;
+  margin-bottom: 30px;
+}
+
+iframe{
+  margin: 20px;
+}
+
+.homeLinkButton{
+  position:absolute;
+  left: 10px;
+  top: 30px;
+}
+
+.articleContainer{
+  min-height: 150px;
+  align-items: center;
+  text-align: center;
+}
+
+.clickableWord:hover{
+  color: blue;
+}
+
+.textInput{
+  min-width: 50vw;
+  margin-bottom:20px;
+}
+
+#articleDate{
+  margin-left: 20px;
+}
+
+.authorContainer{
+  margin-bottom:20px;
+}
+
+.buttonContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  min-width: 30vw;
+}
+
+.pageContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.descriptionButtonContainer{
+  display: flex;
+  box-sizing: border-box;
+  min-width: 80vw;
+  position:relative;  
+  justify-content: flex-end;
+}
+
+.ddescriptionLinkButton{
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.descriptionText {
+  max-width: 80vw;
+  text-indent: 30px;
+  line-height: 160%;
+}
+
+.noDescriptionText {
+  max-width: 80vw;
+  line-height: 160%;
 }
 
 .footer {
   max-height: '20%';
   background-image: url(../images/flag_hills.png);
   pointer-events: none;
-}
-
-.header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }

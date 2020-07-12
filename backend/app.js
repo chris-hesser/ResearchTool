@@ -87,7 +87,7 @@ app.get('/articleRequest', (request, response) => {
     }
     catch (error) {
       console.log(error);
-      response.send({ title: "oops" });
+      response.send(null);
     }
   })()
 

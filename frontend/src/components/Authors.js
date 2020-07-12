@@ -3,9 +3,12 @@ import { connect } from 'react-redux';
 
 function Authors(props) {
 
-  let authorsArray = props.article.authors;
-  let date = props.article.datePublished;
+  if (props.article.error) {
+    return null;
+  }
 
+  let date = props.article.datePublished;
+  let authorsArray = props.article.authors;
   let authors = " ";
 
   if (authorsArray.length > 0) {

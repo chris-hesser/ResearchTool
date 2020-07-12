@@ -3,6 +3,11 @@ import { connect } from 'react-redux';
 
 function ClickableArticle(props) {
 
+  if (props.article.error)
+  {
+    return (<h1>{props.article.error}</h1>);
+  }
+
   let title = props.article.title;
   let wordsArray = title.split(" ");
 

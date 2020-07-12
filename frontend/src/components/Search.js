@@ -47,7 +47,7 @@ class Search extends React.Component {
       }
       catch (error) {
         console.log(error);
-        this.props.setArticle({ title: "Search failed: " + error.message });
+        this.props.setArticle({ error: "Search failed: " + error.message, });
       }
     })()
   }

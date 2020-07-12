@@ -127,7 +127,7 @@ class Search extends React.Component {
                   addSearchWord={this.addSearchWord}
                 /*addExcludedWord={this.addExcludedWord}*/
                 />
-                <Authors div class='authorContainer'/>
+                <Authors class='authorContainer'/>
               </>
           }
         </div>

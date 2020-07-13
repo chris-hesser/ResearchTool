@@ -1,17 +1,9 @@
 html {
   scroll-behavior: smooth;
+  background-color: #F7F7F7;
 }
 
 .app {
-  /*
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background-image: url(../images/flag_hills.png);*/
-  background-color: #ececec;
-  background-color: #F7F7F7;
   font-family: 'Open Sans', sans-serif; 
 }
 
@@ -20,6 +12,29 @@ html {
   font-weight: 100;
   margin-top: 20px;
   margin-bottom: 0px;
+}
+
+.button {
+  background-color: #BEF6FA;
+  border: none;
+  color: #000;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.button:hover {
+  opacity: 0.7;
+}
+
+#resetButton {
+  background-color: #f6fabe;
+
 }
 
 .subtitle {
@@ -43,6 +58,10 @@ iframe{
   text-align: center;
 }
 
+#articleDescriptionContainer{
+  margin-bottom: 20vw;
+}
+
 .clickableWord:hover{
   color: blue;
 }
@@ -50,6 +69,12 @@ iframe{
 .textInput{
   min-width: 50vw;
   margin-bottom:20px;
+}
+
+h1.header{
+  font-size: calc(20px + 2vmin);
+  font-weight: 100;
+  margin-top: 7vh;
 }
 
 #articleDate{
@@ -102,7 +127,9 @@ iframe{
 }
 
 .footer {
-  max-height: '20%';
-  background-image: url(../images/flag_hills.png);
-  pointer-events: none;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  transform: translate(0px, 8vw);
+  background-color: #F7F7F7;
 }

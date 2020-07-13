@@ -4,6 +4,8 @@ import "../css/App.css";
 import Search from './Search';
 import ArticleDescription from './ArticleDescription';
 
+import { ReactComponent as Logo } from './mountains.svg';
+
 export default function Home() {
 
   return (
@@ -16,14 +18,14 @@ export default function Home() {
           title="Video: how to use this tool"
           width="560" height="315"
           src="https://www.youtube.com/embed/J---aiyznGQ"
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; encrypted-media;"
-          allowfullscreen>
+          allowFullScreen>
         </iframe>
 
         <a href="#searchContainer">
-          <button renderas="button" autoFocus>
-            <span>Let's begin</span>
+          <button  class='button' renderas="button" autoFocus>
+            <span>Get started</span>
           </button>
         </a>
       </div>
@@ -36,8 +38,8 @@ export default function Home() {
         <ArticleDescription />
       </div>
 
-      <div className="footer">
-      </div>
+      {/*<img source={Logo} className="footer" alt="Blue mountains with gold flag on peak" />*/}
+      <Logo className="footer" alt="Blue mountains with gold flag on peak" />
     </div>
   );
 }

@@ -110,9 +110,9 @@ class Search extends React.Component {
     return (
       <>
 
-        <h1>Resource</h1>
+        <h1 class='header'>Resource</h1>
         <a className="homeLinkButton" href="#homeContainer">
-          <button renderas="button">
+          <button class='button' renderas="button">
             <span>How to use</span>
           </button>
         </a>
@@ -136,14 +136,14 @@ class Search extends React.Component {
         {/*<input type="text" value={this.state.excludedWords} onChange={this.handleExcludedChange} />*/}
 
         <div className="buttonContainer">
-          <button disabled={this.isLoading()} onClick={() => { this.clearFields(); this.fetchArticleData(); }}>Reset</button>
-          <button disabled={this.isLoading()} onClick={this.fetchArticleData}>Next</button>
+          <button class='button' id='resetButton' disabled={this.isLoading()} onClick={() => { this.clearFields(); this.fetchArticleData(); }}>Reset</button>
+          <button class='button' disabled={this.isLoading()} onClick={this.fetchArticleData}>Next</button>
         </div>
 
 
         <div className="descriptionButtonContainer">
           <a className="descriptionLinkButton" href="#articleDescriptionContainer">
-            <button renderas="button">
+            <button class='button' renderas="button">
               <span>Description</span>
             </button>
           </a>

@@ -11,7 +11,7 @@ function ArticleDescription(props) {
 
   return (
     <>
-      <h1>Description</h1>
+      <h1 className='header'>Description</h1>
       {displayDescription ?
         <p className='descriptionText'>{descriptionText}</p>
         :
@@ -26,7 +26,7 @@ function ArticleDescription(props) {
           : null
       }
       <a href="#searchContainer">
-        <button renderas="button">
+        <button class='button' renderas="button">
           <span>Back to search</span>
         </button>
       </a>

@@ -5,6 +5,7 @@ import Search from './Search';
 import ArticleDescription from './ArticleDescription';
 
 import { ReactComponent as Logo } from './mountains_separate.svg';
+import { ReactComponent as CoreLogo } from './core.svg';
 
 export default function Home() {
 
@@ -41,7 +42,12 @@ export default function Home() {
       {/*<img source={Logo} className="footer" alt="Blue mountains with gold flag on peak" />*/}
       <Logo className="footer" alt="Blue mountains with gold flag on peak" />
 
-      <a href="http://www.github.com/chris-hesser/ResearchTool" className="iconRef" alt="Link to github project">{/*// eslint-disable-next-line*/}</a>
+
+      <a href="https://www.core.ac.uk" className="coreRef" alt="Link to Core website" rel="noopener noreferrer" target="_blank">
+        <CoreLogo alt="core home page link"/>
+      </a>
+      <a href="https://www.github.com/chris-hesser/ResearchTool" className="iconRef" alt="Link to github project" 
+      rel="noopener noreferrer" target="_blank">{/*// eslint-disable-next-line*/}</a>
     </div>
   );
 }

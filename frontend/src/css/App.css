@@ -133,7 +133,7 @@ h1.header{
 
 .iconRef {
   position: fixed;
-  bottom: 50px;
+  top: 10px;
   right: 20px;
   display: block;
   background-image: url(../components/GitHub-Mark-64px.png);
@@ -145,6 +145,15 @@ h1.header{
   height: 64px;
   text-decoration: none;
   overflow: hidden;
+}
+
+.coreRef{
+  position:fixed;
+  top: 70px;
+  right: 35px;
+  width:30px;
+  height:30px;
+  display:block;
 }
 
 .footer {

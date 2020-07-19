@@ -4,7 +4,7 @@ import "../css/App.css";
 import Search from './Search';
 import ArticleDescription from './ArticleDescription';
 
-import { ReactComponent as Logo } from './mountains.svg';
+import { ReactComponent as Logo } from './mountains_separate.svg';
 
 export default function Home() {
 
@@ -24,7 +24,7 @@ export default function Home() {
         </iframe>
 
         <a href="#searchContainer">
-          <button  class='button' renderas="button" autoFocus>
+          <button class='button' renderas="button" autoFocus>
             <span>Get started</span>
           </button>
         </a>
@@ -40,6 +40,8 @@ export default function Home() {
 
       {/*<img source={Logo} className="footer" alt="Blue mountains with gold flag on peak" />*/}
       <Logo className="footer" alt="Blue mountains with gold flag on peak" />
+
+      <a href="http://www.github.com/chris-hesser/ResearchTool" className="iconRef" alt="Link to github project">{/*// eslint-disable-next-line*/}</a>
     </div>
   );
 }

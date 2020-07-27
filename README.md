@@ -8,10 +8,10 @@ Find the running tool here: TBD
 Clone this repository, use npm to install the dependencies.
 
 Run frontend from the frontend directory with:
-    npm start
+`npm start`
 
 Run backend service from the backend directory with:
-    node app.js
+`node app.js`
 
 ## How to use
 [How to video](https://youtu.be/MtZw4Abcfvc)
@@ -20,13 +20,13 @@ Run backend service from the backend directory with:
 This tool is based on [Random Restart Hill Climbing](https://en.wikipedia.org/wiki/Hill_climbing) 
 
 Thank you to the following softwares and more that made this possible!
-*[CORE](https://core.ac.uk/)
-*node.js
-*react.js
-*webpack
-*babel
-*axios
-*express.js
-*create-react-app
+* [CORE](https://core.ac.uk/)
+* node.js
+* react.js
+* webpack
+* babel
+* axios
+* express.js
+* create-react-app
 
 Music in the how to video is: Susie the Cat by Checkie Brown.

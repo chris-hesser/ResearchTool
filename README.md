@@ -5,7 +5,7 @@ Find the running tool here: TBD
 
 ## How to install and run
 
-Clone this repository, use npm to install the dependencies.
+Clone this repository, install nodejs and npm (see backend readme). Use npm to install the dependencies.
 
 Run frontend from the frontend directory with:
 `npm start`

@@ -1,7 +1,20 @@
 const express = require('express');
 const axios = require('axios');
+const fs = require('fs');
 
 var app = express();
+var apiKey = getApiKey(); 
+
+function getApiKey() {
+  // Sorry, not exposing mine. 
+  // You'll need your own from CORE, it's free (www.core.ac.uk)
+  fs.readFile('../apiKey.txt', 'utf8', function (err, data) {
+    if (err) {
+      return console.log(err);
+    }
+    apiKey = data.trim();
+  });
+}
 
 // axios debug
 /*
@@ -27,7 +40,7 @@ const getArticleData = async (query, pageNumber) => {
       url: 'https://core.ac.uk:443/api-v2/articles/search',
       params:
       {
-        apiKey: '20hIsS1F5j4D2C2iXrg4Wxf7VTp4Xt1j',
+        apiKey: apiKey,
       },
       data:
         [{
@@ -35,7 +48,7 @@ const getArticleData = async (query, pageNumber) => {
           pageSize: 10, // min is 10 apparently
           default_operator: 'AND',
           fields: ['description', 'title'],
-          query: query, 
+          query: query,
         }]
     });
 
@@ -62,7 +75,7 @@ app.get('/articleRequest', (request, response) => {
   let pageNumber = Math.floor(Math.random() * Math.floor(100));
   let query = (request.query.q.length <= 0) ? '*' : request.query.q;
 
-  let queryFormatted = query.split(' ').map( (word) => "+" + word + ' ' ).reduce((word, current) => word + current);
+  let queryFormatted = query.split(' ').map((word) => "+" + word + ' ').reduce((word, current) => word + current);
 
   (async () => {
     try {
